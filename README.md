@@ -84,7 +84,7 @@ docker rm <container-id-1> <container-id-2>
 
 i) MySQL container 
 ```bash
-docker run -d -p 3360:3360 --name mysql --network=twotier -e MYSQL_DATABASE=testdb -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD="admin" -e MYSQL_PASSWORD="myadmin" mysql:5.7
+docker run -d -p 3360:3360 --name mysql --network=twotier -e MYSQL_DATABASE=testdb -e MYSQL_USER=admin -e MYSQL_ROOT_PASSWORD=<yourpassword> -e MYSQL_PASSWORD=<yourpassword> mysql:5.7
 ```
 -check if the mysql container has been added to the new network created
 ```bash
@@ -92,7 +92,7 @@ docker inspect <network name>
 ```
 ii) Backend container
 ```bash
-docker run -d -p 5000:5000  --name flask-app --network=twotier -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=<yourpassword> -e MYSQL_DB=testdb flaskapp-2tier:latest
+docker run -d -p 5000:5000  --name flask-app --network=twotier -e MYSQL_HOST=mysql -e MYSQL_DB=testdb -e MYSQL_USER=admin -e MYSQL_PASSWORD=<yourpassword> flaskapp-2tier:latest
 
 docker inspect <network name>
 ```
