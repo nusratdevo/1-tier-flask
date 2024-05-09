@@ -49,6 +49,9 @@ docker images
 - Now Run the created docker Container with the help of Docker images with Mentioned Port
 ```bash
 docker run -d -p 5000:5000 flaskapp-2tier:latest
+```
+-Run Locally image container
+```bash
 docker run  -t -p 5000:5000   --name  flaskapp flaskapp-2tier:latest
 docker exec -it flaskapp
 docker ps
@@ -56,17 +59,6 @@ docker ps
 -Now Access the app with the help of the Public IP of Ec2 Instance with port no 
 ```bash 
 http://<Public_IP>:5000
-```
--Create volume for the MySQL database
-``` bash
-mkdir volumes
-cd volumes
-mkdir flask-app
-```
-- go back to your application folder.Next, run this command to create the volume for the Mysql database.
-```bash
-docker volume create --name mysql-volume --opt type=none --opt device=/home/ubuntu/mydockerbuild/volumes --opt o=bind
-docker volume ls
 ```
 -We need to create a MySQL image & Container.
 ```bash 
