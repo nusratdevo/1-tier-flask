@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: two-tier-app-container
-          image: nusratdev / 2-tier-flask-app:latest
+          image: nusratdev/2-tier-flask-app:latest
           env:
             - name: MYSQL_HOST
               value: "mysql-cluserIP-service"
