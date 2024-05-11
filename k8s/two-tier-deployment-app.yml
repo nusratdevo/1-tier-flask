@@ -16,16 +16,16 @@ spec:
     spec:
       containers:
         - name: two-tier-app-container
-          image: dushyantkumark/2-tier-flask-app:latest
+          image: nusratdev / 2-tier-flask-app:latest
           env:
             - name: MYSQL_HOST
               value: "mysql-cluserIP-service"
             - name: MYSQL_PASSWORD
               value: "myadmin"
             - name: MYSQL_USER
-              value: "root"
+              value: "admin"
             - name: MYSQL_DB
-              value: "myDb"
+              value: "testdb"
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
