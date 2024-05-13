@@ -19,7 +19,7 @@ spec:
           image: mysql:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: "dmin"
+              value: "root"
             - name: MYSQL_DATABASE
               value: "testdb"
             - name: MYSQL_USER
